@@ -1,0 +1,93 @@
+-- create database library;
+
+ use library;
+ 
+ -- create table book_restoration_projects(
+ -- project_id int,
+-- book_title varchar(50),
+-- author_name varchar(50),
+-- restoration_date date,
+-- condition_before varchar(50),
+-- condition_after varchar(50),
+ -- restored_by  varchar(50),
+-- cost_usd int
+-- );
+
+ -- insert into book_restoration_projects(project_id,book_title,author_name,restoration_date,condition_before,condition_after,restored_by,cost_usd)
+ -- values(1,'Codex Seraphinianus','Luigi Serafini','2015-04-22','Poor','Good','Mr. Langdon',1200);
+ -- insert into book_restoration_projects(project_id,book_title,author_name,restoration_date,condition_before,condition_after,restored_by,cost_usd)
+ -- values(2,'Voynich Manuscript','Unknown','2017-09-10','Very Poor','Fair','Ms. Whitmore','3000');
+ -- insert into book_restoration_projects(project_id,book_title,author_name,restoration_date,condition_before,condition_after,restored_by,cost_usd)
+ -- values(3,'Hypnerotomachia Poliphili','Francesco Colonna','2018-12-05',	'Fair',	'Excellent','Mr. D''Souza',	1500);
+ -- insert into book_restoration_projects(project_id,book_title,author_name,restoration_date,condition_before,condition_after,restored_by,cost_usd)
+ -- values(4,'Gutenberg Bible','Johannes Gutenberg','2020-03-18','Poor','Good','Ms. Adler',5000);
+ -- insert into book_restoration_projects(project_id,book_title,author_name,restoration_date,condition_before,condition_after,restored_by,cost_usd)
+ -- values(5,'Diamond Sutra','Unknown','2021-07-23','Very Poor','Poor','Mr. Lee',2000);
+ -- insert into book_restoration_projects(project_id,book_title,author_name,restoration_date,condition_before,condition_after,restored_by,cost_usd)
+ -- values(6,'Book of Kells','Unknown','2023-05-15','Good','Excellent','Dr. O’Connor',4200);
+ 
+ 
+ 
+ -- 1
+ -- insert into book_restoration_projects(project_id,book_title,author_name,restoration_date,condition_before,condition_after,restored_by,cost_usd)
+ -- values (7,'Magna Carta','Various','2024-02-20','Fair','Good','Mr. Collins',1800);
+ -- 2 
+ -- insert into book_restoration_projects(project_id,book_title,author_name,restoration_date,condition_before,condition_after,restored_by,cost_usd)
+ -- values (8,'The Black Book','Unknown','2022-10-01','Very Poor','Fair','Ms. Monroe',2500);
+ -- 3
+-- update book_restoration_projects set  condition_after= 'fair' where book_title='diamond sutra';
+-- 4
+-- update book_restoration_projects set  cost_usd= 3500 where book_title='Voynich Mnuscript';
+-- 5
+-- delete from  book_restoration_projects where book_title='book of kells';
+-- 6
+ -- delete from book_restoration_projects where restored_by='Mr. lee';
+-- 7
+-- select *from book_restoration_projects;
+-- 8
+-- select *from book_restoration_projects where  restored_by='Ms. Adler';
+-- 9
+-- select *from book_restoration_projects where restoration_date <  '2019-01-01';
+-- 10
+-- select *from book_restoration_projects where restoration_date >  '2020-01-01' and cost_usd > 2000;
+-- 11
+-- select *from book_restoration_projects where condition_before='Very Poor';
+-- 12
+-- select *from book_restoration_projects where restored_by='Mr. D''Souza' or cost_usd < 2000;
+-- 13
+-- select *from book_restoration_projects where condition_after !='good';
+-- 14
+-- select *from book_restoration_projects where book_title like 'c%';
+-- 15
+-- select *from book_restoration_projects where author_name like '%n';
+-- 16
+-- select  *from book_restoration_projects where book_title like '_%_%_%_%';  not conform even chat gpt not able to help
+-- 17
+-- select *from book_restoration_projects order by cost_usd desc;
+-- 18
+-- select *from book_restoration_projects order by restoration_date ;
+-- 19
+-- select *from book_restoration_projects order by cost_usd desc limit 3; some help of chat gpt
+-- 20
+-- select *from book_restoration_projects order by restoration_date desc limit 2;
+-- 21
+-- select *from book_restoration_projects where  cost_usd  between 1500 and 4000;
+-- 22
+-- select *from book_restoration_projects where author_name like'un%';
+-- 23
+-- select *from book_restoration_projects where  book_title like '%book%';
+-- 24
+-- select *from book_restoration_projects where restoration_date between '2016-01-01' and '2021-12-31';
+-- 25
+-- select *from book_restoration_projects where condition_before='poor' and condition_after='good';
+-- 26
+-- select *from book_restoration_projects where  restored_by like 'Mr%';
+-- 27
+-- select *from book_restoration_projects where book_title like 'B____ of Kells'; output not shown
+-- 28
+-- select *from book_restoration_projects where book_title like '%man%';
+-- 29
+-- insert into book_restoration_projects(project_id,book_title,author_name,restoration_date,condition_before,condition_after,restored_by,cost_usd)
+-- values(9,'Secret Treatise','Alchemist X','2022-06-06', 'Poor','Excellent','Dr. Zane',2800);
+-- 30
+-- update book_restoration_projects set author_name='L. Serafini' where  book_title='Codex Seraphinianus';
