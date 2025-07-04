@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include<stdlib.h>
+
+struct student{
+  char *name;
+  int roll;
+  double marks;
+};
+
+int main()
+{
+  
+  struct student student1;
+  
+  student1.name="achal";
+  student1.roll=124;
+  student1.marks=65.91;
+  
+  printf("%s\n",student1.name);
+    printf("%d\n",student1.roll);
+  printf("%.2f\n",student1.marks);
+
+  
+   struct student student2;
+  
+  student2.name="bhavya";
+  student2.roll=125;
+  student2.marks=69.91;
+  
+  printf("%s\n",student2.name);
+    printf("%d\n",student2.roll);
+  printf("%.2f\n",student2.marks);
+}
