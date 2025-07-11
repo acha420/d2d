@@ -1,0 +1,77 @@
+#include <stdio.h>
+#include<stdlib.h>
+
+struct Node{
+  
+  int data;
+  struct Node*next;
+  
+};
+
+void traverse(struct Node*current)
+{
+  while(current != NULL){
+    
+  printf("%d->",current->data);
+  current=current->next;
+  
+}
+printf("NULL\n");
+return;
+}
+
+void insertatend(struct Node*current, int new_data){
+  struct Node*new_node=(struct Node*)malloc(sizeof(struct Node));
+  new_node->data=new_data;
+  new_node->next=NULL;
+  
+  if(current == NULL){
+    current=new_node;
+    return;
+  }
+  while(current->next !=NULL){
+    current =current->next;
+    
+  }
+  current->next=new_node;
+  return;
+}
+
+int main(){
+  
+  struct Node*head=malloc(sizeof(struct Node));
+  head->data=10;
+  head->next=NULL;
+  
+struct Node*second=malloc(sizeof(struct Node));
+
+second->data=20;
+second->next=NULL;
+
+head->next=second;
+
+struct Node*third=malloc(sizeof(struct Node));
+third->data=30;
+third->next=NULL;
+
+second->next=third;
+struct Node*fourth=malloc(sizeof(struct Node));
+fourth->data=40;
+fourth->next=NULL;
+
+third->next=fourth;
+struct Node*fifth=malloc(sizeof(struct Node));
+fifth->data=50;
+fifth->next=NULL;
+
+fourth->next=fifth;
+
+
+printf("before\n");
+traverse(head);
+printf("inserting...\n");
+insertatend(head,70);
+printf("after\n");
+traverse(head);
+
+}
