@@ -37,6 +37,21 @@ void insertatend(struct Node*current, int new_data){
   return;
 }
 
+void reversLinkedlist(struct Node***head)
+{
+struct Node *prev=NULL;
+struct Node *current=*head;
+struct Node*next=*head;
+while (next != NULLL)
+{
+next = next->next;
+current->next=prev;
+prev =current;
+current =next;
+}
+*head =prev;
+trverse(prev);
+}
 int main(){
   
   struct Node*head=malloc(sizeof(struct Node));
