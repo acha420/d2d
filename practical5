@@ -1,0 +1,94 @@
+#include <stdio.h>
+#define MAX 100
+
+int queue[MAX];
+int front = -1, rear = -1, maxSize = 0;
+
+void initializeQueue(int size) {
+    if (size > MAX) size = MAX;
+    maxSize = size;
+    front = rear = -1;
+}
+
+void enqueue(int value) {
+    if ((rear + 1) % maxSize == front) {
+        printf("Queue is full\n");   // lowercase "full"
+        return;
+    }
+    if (front == -1) {
+        front = rear = 0;
+    } else {
+        rear = (rear + 1) % maxSize;
+    }
+    queue[rear] = value;
+    printf("%d enqueued to queue\n", value);
+}
+
+void dequeue() {
+    if (front == -1) {
+        printf("Queue is empty\n");   // lowercase "empty"
+        return;
+    }
+    printf("%d dequeued from queue\n", queue[front]);
+    if (front == rear) {
+        front = rear = -1;
+    } else {
+        front = (front + 1) % maxSize;
+    }
+}
+
+void traverse() {
+    if (front == -1) {
+        printf("Queue is empty\n");
+        return;
+    }
+    printf("Queue elements:");
+    int i = front;
+    while (1) {
+        printf(" %d", queue[i]);  // leading space before numbers
+        if (i == rear) break;
+        i = (i + 1) % maxSize;
+    }
+    printf("\n");
+}
+
+void search(int key) {
+    if (front == -1) {
+        printf("Queue is empty\n");
+        return;
+    }
+    int i = front, pos = 1;
+    while (1) {
+        if (queue[i] == key) {
+            printf("%d found at position %d\n", key, pos);
+            return;
+        }
+        if (i == rear) break;
+        i = (i + 1) % maxSize;
+        pos++;
+    }
+    printf("%d not found\n", key);
+}
+
+int main() {
+    int size, command, value;
+    scanf("%d", &size);
+    initializeQueue(size);
+    while (1) {
+        if (scanf("%d", &command) != 1) break;  // EOF safe
+        if (command == 1) {
+            scanf("%d", &value);
+            enqueue(value);
+        } else if (command == 2) {
+            dequeue();
+        } else if (command == 3) {
+            traverse();
+        } else if (command == 4) {
+            scanf("%d", &value);
+            search(value);
+        } else if (command == 5) {
+            break;
+        }
+    }
+    return 0;
+}
